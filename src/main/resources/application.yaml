@@ -1,0 +1,38 @@
+server:
+  port: 55555
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  http2:
+    enabled: true
+  compression:
+    enabled: true
+    mime-types: application/json,text/plain
+    min-response-size: 2048  # Compress responses larger than 2 KB
+
+web:
+  cors:
+    allowed-origins: "*"
+    allowed-methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+    max-age: 3600
+
+logging:
+  level:
+    reactor.netty.http.client: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.session: DEBUG
+    com.epam.ta.reportportal.ws.model.ErrorReport: DEBUG
+
+spring:
+  application:
+    name: robot
+  servlet:
+    context-path: /
+
+  jackson:
+    default-property-inclusion: NON_NULL
+    property-naming-strategy: SNAKE_CASE
+    ignore-unknown: true
