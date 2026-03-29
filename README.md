@@ -17,13 +17,18 @@
     # 2. root
     cd robot
     
-    # 3. compile, run & integration test
+    # 3. compile, run test & package jar
     mvn clean install
     
     or
     
     # 4. run integration test
     mvn test
+
+    # 5. run application
+    - cd target
+    - java -jar robot-0.0.1-SNAPSHOT.jar
+    application will start with port:55555 and can call from postman
 
 **Process flow of program**
 
@@ -46,7 +51,6 @@
     }
     
     2. "MOVE" command
-    
     {
         "command": "MOVE"
     }
